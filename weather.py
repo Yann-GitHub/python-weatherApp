@@ -1,11 +1,12 @@
 from dotenv import load_dotenv
-from pprint import pprint
-import requests
-import os
+from pprint import pprint  # pretty print
+import requests  # to make HTTP requests
+import os  # to access environment variables
 
 load_dotenv()
 
 
+# Function to get the current weather data from the API OpenWeatherMap
 def get_current_weather(city="Locquirec"):
 
     request_url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv('API_KEY')}&units=metric"

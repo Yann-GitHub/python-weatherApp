@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from weather import get_current_weather
-from waitress import serve
+from waitress import serve  # production server
+
 
 app = Flask(__name__)
 
@@ -20,11 +21,11 @@ def weather():
     if not bool(city.strip()):
         city = "Locquirec"
 
+    # Retrieve weather data from the API
     weather_data = get_current_weather(city)
 
     # City is not found by the API
     if not weather_data["cod"] == 200:
-        # return "City not found"
         return render_template("city-not-found.html")
 
     return render_template(
@@ -37,5 +38,6 @@ def weather():
 
 
 if __name__ == "__main__":
-    # app.run(host="0.0.0.0", port=8000)
-    serve(app, host="0.0.0.0", port=8000)
+    # app.run(host="0.0.0.0", port=8000) # development server
+    print("\n ** Starting the server ** \n")
+    serve(app, host="0.0.0.0", port=8000)  # using waitress for production server
