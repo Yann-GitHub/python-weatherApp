@@ -16,4 +16,4 @@ This application uses the public OpenWeatherMap API to fetch current weather dat
 
 ## Deployment
 
-The application is deployed using Render and can be accessed at [www.python-weatherapp-5gsd.onrender.com](http://www.python-weatherapp-5gsd.onrender.com).
+The application is deployed using Render and can be accessed at [https://python-weatherapp-5gsd.onrender.com](https://python-weatherapp-5gsd.onrender.com).
